@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>{{meta_title}}</title>
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	{{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+		crossorigin="anonymous"> --}}
+	<link rel="stylesheet" type="text/css" href="{{asset "css/dependencies.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+
+	<script src="https://kit.fontawesome.com/7ef7ac28ed.js" crossorigin="anonymous"></script>
+
+	{{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+	<div id="wrapper">
+		<div id="ajax-container">
+			<nav id="nav" 
+				class="nav navbar navbar-main navbar-expand-lg navbar-light bg-translucent-white border-bottom zindex-101 is_stuck py-0"
+				data-toggle="sticky"
+    			style="position: fixed; top: 0px; width: 100%; z-ndex: 100;">
+				{{> nav_bar }}
+			</nav>
+			
+			{{{body}}}
+			
+			<div id="body-class" style="display: none;" class="{{body_class}}"></div>
+			
+			{{> footer }}
+		</div>
+	</div>
+	{{ghost_foot}}
+
+	<script type="text/javascript" src="{{asset "js/dependencies.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
+	<script 
+		src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+		crossorigin="anonymous">
+	</script>
+	<script 
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+		crossorigin="anonymous">
+	</script>
+	<script 
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
+		crossorigin="anonymous">
+	</script>
+</body>
+</html>

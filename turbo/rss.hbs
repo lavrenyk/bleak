@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss 
+    xmlns:yandex="http://news.yandex.ru"
+    xmlns:media="http://search.yahoo.com/mrss/"
+    xmlns:turbo="http://turbo.yandex.ru" 
+    version="2.0">
+    <channel>
+        <title><![CDATA[ {{@blog.title}} ]]></title>
+        <description><![CDATA[ {{@blog.description}} ]]></description>
+        <link>{{@blog.url}}</link>
+        <language>ru</language>
+        <turbo:analytics type="Yandex" id="62875723"></turbo:analytics>
+        <image>
+            <url>{{@blog.url}}/favicon.png</url>
+            <title>{{@blog.title}}</title>
+            <link>{{@blog.url}}</link>
+        </image>
+        <lastBuildDate>{{date format="DD MM YYYY HH:mm:ss ZZ"}}</lastBuildDate>
+        <atom:link href="{{@blog.url}}" rel="self" type="application/rss+xml"/>
+        <ttl>60</ttl>
+
+        {{#get "posts" limit="all" include="authors"}}
+            {{#foreach posts}}
+            <item turbo="true">
+                <!-- Информация о странице -->
+                <link>{{url absolute="true"}}</link>
+                <turbo:source></turbo:source>
+                <turbo:topic></turbo:topic>
+                {{!-- <pubDate>{{date format="ddd, DD MMM YYYY HH:mm:ss ZZ"}}</pubDate> --}}
+                <author><![CDATA[ {{primary_author.name}} ]]></author>
+                <metrics>
+                    <yandex schema_identifier="Идентификатор">
+                        <breadcrumblist>
+                            <breadcrumb url="{{@blog.url}}" text="Основная"/>
+                        </breadcrumblist>
+                    </yandex>
+                </metrics>
+                <yandex:related></yandex:related>
+                <turbo:content>
+                    <![CDATA[ 
+                        <header>
+                            <h1>{{title}}</h1>
+                            <figure>
+                                <img src="{{img_url feature_image}}"/>
+                            </figure>
+                            <menu>
+                                <a href="{{@blog.url}}">Основная</a>
+                            </menu>
+                            <div data-block="breadcrumblist">
+                                <a href="{{@blog.url}}">Основная</a>
+                            </div>
+                        </header>
+                    
+                        {{content}} 
+                    
+                    ]]>
+                </turbo:content>
+            </item>
+            {{/foreach}}
+        {{/get}}
+
+    </channel>
+</rss>

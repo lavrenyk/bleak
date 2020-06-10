@@ -1,0 +1,167 @@
+<div class="container-md">
+    <a class="navbar-brand fs-4 ml-1 mr-auto" href="{{@site.url}}">
+        <div class="d-flex align-items-center text-primary mt-2">
+        {{#if @site.logo}}
+        <img class="mb-1"
+            src="{{@site.icon}}" alt="{{t "Logo" }}" />
+        {{/if}}
+        <span class="text-primary font-weight-700 logo-text">
+            ТВОЙ
+            <span class="text-800 font-weight-600" 
+            style="font-size: 1rem; font-family: 'Proxima-Nova'; color: #455f75;">
+            бизнес-план
+            </span>
+            
+        </span>
+        <span style="position: relative; left: -60px; top: -8px; font-weight: 300; font-size: 11px; color: #3b506c;">
+            публикации
+        </span> 
+        </div>
+    </a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-main-collapse"
+        aria-controls="navbar-main-collapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbar-main-collapse"
+        class="collapse navbar-collapse navbar-collapse-overlay">
+        <div class="position-relative">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar-main-collapse"
+            aria-controls="navbar-main-collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        </div>
+        
+        {{#get "tags"}}
+        <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item nav-item-spaced d-none d-lg-block">
+                <a class="nav-link" href="/">
+                Основная
+                </a>
+            </li>
+            <li class="nav-item nav-item-spaced dropdown dropdown-animate"
+                data-toggle="hover">
+                <a class="nav-link"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                    Категории
+                </a>
+                <div class="dropdown-menu dropdown-menu-md p-0">
+                <div class="list-group list-group-flush px-lg-4">
+                <a href="#"
+                    class="list-group-item list-group-item-action"
+                    role="button">
+                    <div class="d-flex">
+                        {{!-- <span class="h6">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1em"
+                                height="1em"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-book">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </span> --}}
+                        
+                        <div class="ml-1">
+                            
+                        <h6 class="heading mb-0"> <i class="fas fa-star mr-2"></i> Избранное</h6>
+                        <small class="text-sm">Наиболее популярные статьи</small>
+                        </div>
+                    </div>
+                </a>
+                <div class="mb-3">
+                        <hr class="m-0 d-sm-none">
+                        <div class="row pl-3 mt-2">
+                            {{#foreach tags}}
+                                <a href="{{url}}"
+                                    class="dropdown-item">
+                                    <span class="h6 text-muted">#</span> {{name}}
+                                    {{!-- <small class="badge badge-secondary font-weight-light py-1">
+                                        {{count.posts}}
+                                        {{plural count.posts empty="0" singular="1 статья" plural="% статей"}} For counting posts under this tag
+                                    </small>   --}}
+                                </a>
+                            {{/foreach}}
+                            {{!-- <a href="#"
+                                class="col-6 dropdown-item">
+                                Психология
+                            </a>
+                            <a href="#"
+                                class="col-6 dropdown-item">
+                                Управление
+                            </a>
+                            <a href="#"
+                                class="col-6 dropdown-item">
+                                Семья
+                            </a>
+                            <a href="#"
+                                class="col-6 dropdown-item">
+                                Здоровье
+                            </a>
+                            <a href="#"
+                                class="col-6 dropdown-item">
+                                Отношения
+                            </a> --}}
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+        </ul>
+        {{/get}}
+        <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
+            <li class="nav-item">
+                <a href="../../pages/authentication/login-basic.html"
+                class="nav-link">
+                Вход <i class="fas fa-sign-in-alt ml-1"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/"
+                class="btn btn-sm btn-primary btn-icon ml-3"
+                target="_blank">
+                <span class="btn-inner--icon">
+                    <i class="fas fa-key"></i>
+                </span>
+                <span class="btn-inner--text">
+                    Регистрация
+                </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
