@@ -30,7 +30,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/zutrinken/bleak.git"
+    "url": "https://github.com/lavrenyk/bleak.git"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
